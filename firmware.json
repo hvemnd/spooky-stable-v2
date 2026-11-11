@@ -1,0 +1,19 @@
+{
+  "schema": 1,
+  "id": "spooky",
+  "name": "Spooky Stable",
+  "author": "YOUR NAME",
+  "license": "MPL-2.0",
+  "tagline": "eight silly unicorn toys for little hands",
+  "description": "A no-menu, no-text toy for a three-year-old. Eight buttons pick a toy starring a rainbow unicorn: fart, poop, pee, burp, sneeze, a drum jam, a toilet flush and a booger flick. Every key makes it act at once with cartoon squash and stretch, shake and particles; every note snaps to the mood's scale, and one knob changes the whole world's colours and music.",
+  "tags": ["game", "fm"],
+  "install": "https://YOUR-NAME.github.io/spooky-stable/install/",
+  "source": "https://github.com/YOUR-NAME/spooky-stable",
+  "screenshot": "app/docs/img/fart.png",
+  "hardware": {
+    "models": ["FM-1"],
+    "flash": ["856014", "B36014"],
+    "features": ["usb-audio-in", "usb-audio-out", "velocity", "pressure", "screen-reader"]
+  },
+  "credits": "Built on fm1-base and felucca-bsp."
+}

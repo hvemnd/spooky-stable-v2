@@ -1,0 +1,304 @@
+# Spooky Stable v2 in the host simulator: base/tools/build.py app --host, then
+#   app/build/host/spooky_host app/tests/basic.txt app/build/host
+# Every toy from its button, every key region in every toy, the knobs, presets, moods, the loop recorder, replay,
+# cleanup, quiet mode, idling and waking, the wardrobe, and the settings across a power cycle.
+wait 700
+expect toy 0
+expect mood 0
+shot idle.png
+# --- HOME: Unicorn Fart. A low key (big): a cloud, a voice, a hitstop
+key 0 down 110 40
+wait 30
+expect voices >0
+expect hitstops >0
+key 0 up
+wait 220
+expect particles >10
+expect clouds >0
+shot fart.png
+key 24 down 90 40
+wait 20
+expect voices >1
+key 24 up
+wait 1500
+# every knob of the toy moves and is shown
+turn K2 3
+expect k2 7
+turn K3 -2
+expect k3 8
+turn K4 2
+expect k4 10
+turn ALGO 1
+expect k6 1
+turn PRESET 4
+expect k7 10
+tapkey 6
+wait 300
+shot fart_skull_style.png
+turn ALGO 3
+expect k6 0
+wait 1200
+# --- the presets: OCT+ steps, OCT- back, hold OCT+ to the first
+tap OCT+
+wait 50
+expect preset 1
+tap OCT+
+wait 50
+expect preset 2
+shot preset.png
+tap OCT-
+wait 50
+expect preset 1
+press OCT+
+wait 800
+release OCT+
+wait 50
+expect preset 0
+wait 1000
+# --- EDIT: Unicorn Poop. A pile grows; a tiny ghost giggles away at the third
+tap EDIT
+wait 400
+expect toy 1
+tapkey 3
+wait 350
+tapkey 13
+wait 350
+tapkey 25
+wait 500
+expect poops 3
+expect minis >0
+tapkey 9
+wait 350
+tapkey 11
+wait 600
+expect poops 5
+shot poop_tower.png
+# held: the machine gun
+turn K2 10
+key 4 down 100 40
+wait 900
+key 4 up
+wait 900
+expect poops >7
+shot poop.png
+# --- LFO: Unicorn Pee. Hold a key: the stream runs while it is held, a second key glides the flute
+tap LFO
+wait 400
+expect toy 2
+key 2 down 100 40
+wait 900
+expect pee 1
+key 20 down 100 40
+wait 300
+shot pee.png
+key 20 up
+wait 600
+expect pee 1
+key 2 up
+wait 800
+expect pee 0
+tapkey 14
+wait 1200
+# --- FX: Unicorn Burp. A gulp at once, then the burp
+tap FX
+wait 400
+expect toy 3
+tapkey 10
+wait 30
+expect burp 1
+expect voices >0
+wait 200
+shot burp_belly.png
+wait 250
+expect burp 3
+shot burp.png
+tapkey 0
+wait 60
+tapkey 26
+wait 1500
+expect burp 0
+# --- ENV: Unicorn Sneeze. Hold: the breath in; let go: CHOO; a quick tap: a tiny one
+tap ENV
+wait 400
+expect toy 4
+key 5 down 100 40
+wait 900
+expect sneeze 1
+shot sneeze_charge.png
+key 5 up
+wait 250
+expect sneeze 3
+expect props_away >0
+shot sneeze.png
+wait 1200
+tapkey 22
+wait 300
+expect sneeze 3
+wait 1500
+# --- GLO: Drum Jam. Hits on the grid; REC records four bars; hold REC clears
+tap GLO
+wait 400
+expect toy 5
+tapkey 0
+wait 200
+expect voices >0
+tapkey 9
+tapkey 20
+wait 200
+tap REC
+wait 50
+expect loop 1
+tapkey 0
+wait 260
+tapkey 2
+wait 260
+tapkey 0
+wait 260
+tapkey 2
+wait 260
+tapkey 13
+shot drum_rec.png
+wait 9000
+expect loop 2
+shot drum_loop.png
+tap PLAY
+wait 2000
+expect auto 1
+shot drum_auto.png
+tap PLAY
+wait 50
+expect auto 0
+press REC
+wait 800
+release REC
+wait 100
+expect loop 0
+# --- ARP: Toilet Flush. Something drops in, the whirlpool takes it (and the props)
+tap ARP
+wait 400
+expect toy 6
+tapkey 6
+wait 300
+expect flushing 1
+expect props_away >0
+shot toilet.png
+tapkey 18
+wait 1600
+expect swallowed >1
+wait 1500
+# --- SEQ: Booger Flick. Hold: the booger grows; let go: it flies to the wall and sticks
+tap SEQ
+wait 400
+expect toy 7
+key 8 down 100 40
+wait 500
+shot booger_pick.png
+key 8 up
+wait 900
+expect boogers 1
+tapkey 20
+wait 120
+tapkey 2
+wait 900
+expect boogers 3
+shot booger.png
+# --- cleanup: hold the toy's own button
+press SEQ
+wait 800
+release SEQ
+wait 50
+expect cleans 1
+wait 800
+expect boogers 0
+# --- the mood knob (K5 = SELECT): eight worlds
+turn SELECT 1
+wait 400
+expect mood 1
+shot mood_moon.png
+turn SELECT 4
+wait 400
+expect mood 5
+shot mood_spooky.png
+turn SELECT -5
+wait 400
+expect mood 0
+# --- REC outside Drum Jam: the last 10 s played back
+tap HOME
+wait 400
+tapkey 4
+wait 300
+tapkey 8
+wait 300
+tap REC
+wait 100
+expect replay 1
+shot replay.png
+wait 10500
+expect replay 0
+# --- PLAY: auto-play walks the scale
+tap PLAY
+wait 30
+expect auto 1
+wait 3200
+expect clouds >0
+tap PLAY
+wait 30
+expect auto 0
+# --- K1 volume, and quiet mode (hold SAVE a second)
+turn K1 2
+wait 30
+expect vol 8
+press SAVE
+wait 1100
+release SAVE
+wait 50
+expect quiet 1
+shot quiet.png
+press SAVE
+wait 1100
+release SAVE
+wait 50
+expect quiet 0
+# --- flashes stay under 3 a second however fast the keys are mashed
+strum 0 15 20
+strum 15 0 20
+strum 0 15 20
+wait 30
+expect flashes >5
+expect flash_gap >399
+# --- mashing: five presses in 200 ms is the MEGA
+wait 2000
+strum 0 9 15
+wait 400
+expect megas >0
+shot mega.png
+wait 2000
+# --- idling: she waves at 10 s, sleeps at 30 s, dreams at 60 s; a key wakes her
+wait 11000
+expect idle 1
+shot idle_wave.png
+wait 20000
+expect idle 2
+shot idle_sleep.png
+wait 31000
+expect idle 3
+shot idle_dream.png
+tapkey 12
+wait 100
+expect idle 0
+shot startle.png
+wait 1000
+# --- the settings survive a power cycle (each toy keeps its own knobs)
+turn K2 -2
+wait 3000
+expect k2 5
+power
+wait 700
+expect toy 0
+expect vol 8
+expect k2 5
+expect k3 8
+tap EDIT
+wait 400
+expect k2 12
+expect unlocked >0

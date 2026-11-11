@@ -1,0 +1,1839 @@
+# Spooky Stable v2's loudness ceiling and stamina: base/tools/build.py app --host, then
+#   app/build/host/spooky_host app/tests/stress.txt app/build/host
+# Every toy mashed at full volume and full MASTER (10 keys a second and faster), the ceiling must hold (70 %),
+# and full-screen flashes must stay at least 400 ms apart however fast she goes.
+wait 700
+master 4096
+turn K1 10
+wait 50
+expect vol 10
+peakreset
+wav loud.wav
+tap HOME
+wait 350
+turn PRESET 10
+strum 0 15 8
+strum 15 0 8
+strum 0 15 30
+strum 15 0 30
+key 0 down 127 60
+wait 90
+key 13 down 127 60
+wait 90
+key 26 down 127 60
+wait 90
+key 4 down 127 60
+wait 90
+key 22 down 127 60
+wait 90
+key 0 up
+key 13 up
+key 26 up
+key 4 up
+key 22 up
+strum 0 15 60
+wait 300
+tap EDIT
+wait 350
+turn PRESET 10
+strum 0 15 8
+strum 15 0 8
+strum 0 15 30
+strum 15 0 30
+key 0 down 127 60
+wait 90
+key 13 down 127 60
+wait 90
+key 26 down 127 60
+wait 90
+key 4 down 127 60
+wait 90
+key 22 down 127 60
+wait 90
+key 0 up
+key 13 up
+key 26 up
+key 4 up
+key 22 up
+strum 0 15 60
+wait 300
+tap LFO
+wait 350
+turn PRESET 10
+strum 0 15 8
+strum 15 0 8
+strum 0 15 30
+strum 15 0 30
+key 0 down 127 60
+wait 90
+key 13 down 127 60
+wait 90
+key 26 down 127 60
+wait 90
+key 4 down 127 60
+wait 90
+key 22 down 127 60
+wait 90
+key 0 up
+key 13 up
+key 26 up
+key 4 up
+key 22 up
+strum 0 15 60
+wait 300
+tap FX
+wait 350
+turn PRESET 10
+strum 0 15 8
+strum 15 0 8
+strum 0 15 30
+strum 15 0 30
+key 0 down 127 60
+wait 90
+key 13 down 127 60
+wait 90
+key 26 down 127 60
+wait 90
+key 4 down 127 60
+wait 90
+key 22 down 127 60
+wait 90
+key 0 up
+key 13 up
+key 26 up
+key 4 up
+key 22 up
+strum 0 15 60
+wait 300
+tap ENV
+wait 350
+turn PRESET 10
+strum 0 15 8
+strum 15 0 8
+strum 0 15 30
+strum 15 0 30
+key 0 down 127 60
+wait 90
+key 13 down 127 60
+wait 90
+key 26 down 127 60
+wait 90
+key 4 down 127 60
+wait 90
+key 22 down 127 60
+wait 90
+key 0 up
+key 13 up
+key 26 up
+key 4 up
+key 22 up
+strum 0 15 60
+wait 300
+tap GLO
+wait 350
+turn PRESET 10
+strum 0 15 8
+strum 15 0 8
+strum 0 15 30
+strum 15 0 30
+key 0 down 127 60
+wait 90
+key 13 down 127 60
+wait 90
+key 26 down 127 60
+wait 90
+key 4 down 127 60
+wait 90
+key 22 down 127 60
+wait 90
+key 0 up
+key 13 up
+key 26 up
+key 4 up
+key 22 up
+strum 0 15 60
+wait 300
+tap ARP
+wait 350
+turn PRESET 10
+strum 0 15 8
+strum 15 0 8
+strum 0 15 30
+strum 15 0 30
+key 0 down 127 60
+wait 90
+key 13 down 127 60
+wait 90
+key 26 down 127 60
+wait 90
+key 4 down 127 60
+wait 90
+key 22 down 127 60
+wait 90
+key 0 up
+key 13 up
+key 26 up
+key 4 up
+key 22 up
+strum 0 15 60
+wait 300
+tap SEQ
+wait 350
+turn PRESET 10
+strum 0 15 8
+strum 15 0 8
+strum 0 15 30
+strum 15 0 30
+key 0 down 127 60
+wait 90
+key 13 down 127 60
+wait 90
+key 26 down 127 60
+wait 90
+key 4 down 127 60
+wait 90
+key 22 down 127 60
+wait 90
+key 0 up
+key 13 up
+key 26 up
+key 4 up
+key 22 up
+strum 0 15 60
+wait 300
+tap GLO
+wait 300
+tap PLAY
+turn ALGO 10
+wait 3000
+tap PLAY
+wait 400
+wavstop
+expect peak_db_max <-3.0
+expect flash_gap >399
+expect megas >3
+# 10 keys a second for 10 seconds, in every toy: no crash, voices stay within 12
+tap HOME
+wait 200
+tapkey 3 100
+wait 10
+tapkey 10 100
+wait 10
+tapkey 17 100
+wait 10
+tapkey 24 100
+wait 10
+tapkey 4 100
+wait 10
+tapkey 11 100
+wait 10
+tapkey 18 100
+wait 10
+tapkey 25 100
+wait 10
+tapkey 5 100
+wait 10
+tapkey 12 100
+wait 10
+tapkey 19 100
+wait 10
+tapkey 26 100
+wait 10
+tapkey 6 100
+wait 10
+tapkey 13 100
+wait 10
+tapkey 20 100
+wait 10
+tapkey 0 100
+wait 10
+tapkey 7 100
+wait 10
+tapkey 14 100
+wait 10
+tapkey 21 100
+wait 10
+tapkey 1 100
+wait 10
+tapkey 8 100
+wait 10
+tapkey 15 100
+wait 10
+tapkey 22 100
+wait 10
+tapkey 2 100
+wait 10
+tapkey 9 100
+wait 10
+tapkey 16 100
+wait 10
+tapkey 23 100
+wait 10
+tapkey 3 100
+wait 10
+tapkey 10 100
+wait 10
+tapkey 17 100
+wait 10
+tapkey 24 100
+wait 10
+tapkey 4 100
+wait 10
+tapkey 11 100
+wait 10
+tapkey 18 100
+wait 10
+tapkey 25 100
+wait 10
+tapkey 5 100
+wait 10
+tapkey 12 100
+wait 10
+tapkey 19 100
+wait 10
+tapkey 26 100
+wait 10
+tapkey 6 100
+wait 10
+tapkey 13 100
+wait 10
+tapkey 20 100
+wait 10
+tapkey 0 100
+wait 10
+tapkey 7 100
+wait 10
+tapkey 14 100
+wait 10
+tapkey 21 100
+wait 10
+tapkey 1 100
+wait 10
+tapkey 8 100
+wait 10
+tapkey 15 100
+wait 10
+tapkey 22 100
+wait 10
+tapkey 2 100
+wait 10
+tapkey 9 100
+wait 10
+tapkey 16 100
+wait 10
+tapkey 23 100
+wait 10
+tapkey 3 100
+wait 10
+tapkey 10 100
+wait 10
+tapkey 17 100
+wait 10
+tapkey 24 100
+wait 10
+tapkey 4 100
+wait 10
+tapkey 11 100
+wait 10
+tapkey 18 100
+wait 10
+tapkey 25 100
+wait 10
+tapkey 5 100
+wait 10
+tapkey 12 100
+wait 10
+tapkey 19 100
+wait 10
+tapkey 26 100
+wait 10
+tapkey 6 100
+wait 10
+tapkey 13 100
+wait 10
+tapkey 20 100
+wait 10
+tapkey 0 100
+wait 10
+tapkey 7 100
+wait 10
+tapkey 14 100
+wait 10
+tapkey 21 100
+wait 10
+tapkey 1 100
+wait 10
+tapkey 8 100
+wait 10
+tapkey 15 100
+wait 10
+tapkey 22 100
+wait 10
+tapkey 2 100
+wait 10
+tapkey 9 100
+wait 10
+tapkey 16 100
+wait 10
+tapkey 23 100
+wait 10
+tapkey 3 100
+wait 10
+tapkey 10 100
+wait 10
+tapkey 17 100
+wait 10
+tapkey 24 100
+wait 10
+tapkey 4 100
+wait 10
+tapkey 11 100
+wait 10
+tapkey 18 100
+wait 10
+tapkey 25 100
+wait 10
+tapkey 5 100
+wait 10
+tapkey 12 100
+wait 10
+tapkey 19 100
+wait 10
+tapkey 26 100
+wait 10
+tapkey 6 100
+wait 10
+tapkey 13 100
+wait 10
+tapkey 20 100
+wait 10
+tapkey 0 100
+wait 10
+tapkey 7 100
+wait 10
+tapkey 14 100
+wait 10
+tapkey 21 100
+wait 10
+expect voices <13
+tap EDIT
+wait 200
+tapkey 3 100
+wait 10
+tapkey 10 100
+wait 10
+tapkey 17 100
+wait 10
+tapkey 24 100
+wait 10
+tapkey 4 100
+wait 10
+tapkey 11 100
+wait 10
+tapkey 18 100
+wait 10
+tapkey 25 100
+wait 10
+tapkey 5 100
+wait 10
+tapkey 12 100
+wait 10
+tapkey 19 100
+wait 10
+tapkey 26 100
+wait 10
+tapkey 6 100
+wait 10
+tapkey 13 100
+wait 10
+tapkey 20 100
+wait 10
+tapkey 0 100
+wait 10
+tapkey 7 100
+wait 10
+tapkey 14 100
+wait 10
+tapkey 21 100
+wait 10
+tapkey 1 100
+wait 10
+tapkey 8 100
+wait 10
+tapkey 15 100
+wait 10
+tapkey 22 100
+wait 10
+tapkey 2 100
+wait 10
+tapkey 9 100
+wait 10
+tapkey 16 100
+wait 10
+tapkey 23 100
+wait 10
+tapkey 3 100
+wait 10
+tapkey 10 100
+wait 10
+tapkey 17 100
+wait 10
+tapkey 24 100
+wait 10
+tapkey 4 100
+wait 10
+tapkey 11 100
+wait 10
+tapkey 18 100
+wait 10
+tapkey 25 100
+wait 10
+tapkey 5 100
+wait 10
+tapkey 12 100
+wait 10
+tapkey 19 100
+wait 10
+tapkey 26 100
+wait 10
+tapkey 6 100
+wait 10
+tapkey 13 100
+wait 10
+tapkey 20 100
+wait 10
+tapkey 0 100
+wait 10
+tapkey 7 100
+wait 10
+tapkey 14 100
+wait 10
+tapkey 21 100
+wait 10
+tapkey 1 100
+wait 10
+tapkey 8 100
+wait 10
+tapkey 15 100
+wait 10
+tapkey 22 100
+wait 10
+tapkey 2 100
+wait 10
+tapkey 9 100
+wait 10
+tapkey 16 100
+wait 10
+tapkey 23 100
+wait 10
+tapkey 3 100
+wait 10
+tapkey 10 100
+wait 10
+tapkey 17 100
+wait 10
+tapkey 24 100
+wait 10
+tapkey 4 100
+wait 10
+tapkey 11 100
+wait 10
+tapkey 18 100
+wait 10
+tapkey 25 100
+wait 10
+tapkey 5 100
+wait 10
+tapkey 12 100
+wait 10
+tapkey 19 100
+wait 10
+tapkey 26 100
+wait 10
+tapkey 6 100
+wait 10
+tapkey 13 100
+wait 10
+tapkey 20 100
+wait 10
+tapkey 0 100
+wait 10
+tapkey 7 100
+wait 10
+tapkey 14 100
+wait 10
+tapkey 21 100
+wait 10
+tapkey 1 100
+wait 10
+tapkey 8 100
+wait 10
+tapkey 15 100
+wait 10
+tapkey 22 100
+wait 10
+tapkey 2 100
+wait 10
+tapkey 9 100
+wait 10
+tapkey 16 100
+wait 10
+tapkey 23 100
+wait 10
+tapkey 3 100
+wait 10
+tapkey 10 100
+wait 10
+tapkey 17 100
+wait 10
+tapkey 24 100
+wait 10
+tapkey 4 100
+wait 10
+tapkey 11 100
+wait 10
+tapkey 18 100
+wait 10
+tapkey 25 100
+wait 10
+tapkey 5 100
+wait 10
+tapkey 12 100
+wait 10
+tapkey 19 100
+wait 10
+tapkey 26 100
+wait 10
+tapkey 6 100
+wait 10
+tapkey 13 100
+wait 10
+tapkey 20 100
+wait 10
+tapkey 0 100
+wait 10
+tapkey 7 100
+wait 10
+tapkey 14 100
+wait 10
+tapkey 21 100
+wait 10
+expect voices <13
+tap LFO
+wait 200
+tapkey 3 100
+wait 10
+tapkey 10 100
+wait 10
+tapkey 17 100
+wait 10
+tapkey 24 100
+wait 10
+tapkey 4 100
+wait 10
+tapkey 11 100
+wait 10
+tapkey 18 100
+wait 10
+tapkey 25 100
+wait 10
+tapkey 5 100
+wait 10
+tapkey 12 100
+wait 10
+tapkey 19 100
+wait 10
+tapkey 26 100
+wait 10
+tapkey 6 100
+wait 10
+tapkey 13 100
+wait 10
+tapkey 20 100
+wait 10
+tapkey 0 100
+wait 10
+tapkey 7 100
+wait 10
+tapkey 14 100
+wait 10
+tapkey 21 100
+wait 10
+tapkey 1 100
+wait 10
+tapkey 8 100
+wait 10
+tapkey 15 100
+wait 10
+tapkey 22 100
+wait 10
+tapkey 2 100
+wait 10
+tapkey 9 100
+wait 10
+tapkey 16 100
+wait 10
+tapkey 23 100
+wait 10
+tapkey 3 100
+wait 10
+tapkey 10 100
+wait 10
+tapkey 17 100
+wait 10
+tapkey 24 100
+wait 10
+tapkey 4 100
+wait 10
+tapkey 11 100
+wait 10
+tapkey 18 100
+wait 10
+tapkey 25 100
+wait 10
+tapkey 5 100
+wait 10
+tapkey 12 100
+wait 10
+tapkey 19 100
+wait 10
+tapkey 26 100
+wait 10
+tapkey 6 100
+wait 10
+tapkey 13 100
+wait 10
+tapkey 20 100
+wait 10
+tapkey 0 100
+wait 10
+tapkey 7 100
+wait 10
+tapkey 14 100
+wait 10
+tapkey 21 100
+wait 10
+tapkey 1 100
+wait 10
+tapkey 8 100
+wait 10
+tapkey 15 100
+wait 10
+tapkey 22 100
+wait 10
+tapkey 2 100
+wait 10
+tapkey 9 100
+wait 10
+tapkey 16 100
+wait 10
+tapkey 23 100
+wait 10
+tapkey 3 100
+wait 10
+tapkey 10 100
+wait 10
+tapkey 17 100
+wait 10
+tapkey 24 100
+wait 10
+tapkey 4 100
+wait 10
+tapkey 11 100
+wait 10
+tapkey 18 100
+wait 10
+tapkey 25 100
+wait 10
+tapkey 5 100
+wait 10
+tapkey 12 100
+wait 10
+tapkey 19 100
+wait 10
+tapkey 26 100
+wait 10
+tapkey 6 100
+wait 10
+tapkey 13 100
+wait 10
+tapkey 20 100
+wait 10
+tapkey 0 100
+wait 10
+tapkey 7 100
+wait 10
+tapkey 14 100
+wait 10
+tapkey 21 100
+wait 10
+tapkey 1 100
+wait 10
+tapkey 8 100
+wait 10
+tapkey 15 100
+wait 10
+tapkey 22 100
+wait 10
+tapkey 2 100
+wait 10
+tapkey 9 100
+wait 10
+tapkey 16 100
+wait 10
+tapkey 23 100
+wait 10
+tapkey 3 100
+wait 10
+tapkey 10 100
+wait 10
+tapkey 17 100
+wait 10
+tapkey 24 100
+wait 10
+tapkey 4 100
+wait 10
+tapkey 11 100
+wait 10
+tapkey 18 100
+wait 10
+tapkey 25 100
+wait 10
+tapkey 5 100
+wait 10
+tapkey 12 100
+wait 10
+tapkey 19 100
+wait 10
+tapkey 26 100
+wait 10
+tapkey 6 100
+wait 10
+tapkey 13 100
+wait 10
+tapkey 20 100
+wait 10
+tapkey 0 100
+wait 10
+tapkey 7 100
+wait 10
+tapkey 14 100
+wait 10
+tapkey 21 100
+wait 10
+expect voices <13
+tap FX
+wait 200
+tapkey 3 100
+wait 10
+tapkey 10 100
+wait 10
+tapkey 17 100
+wait 10
+tapkey 24 100
+wait 10
+tapkey 4 100
+wait 10
+tapkey 11 100
+wait 10
+tapkey 18 100
+wait 10
+tapkey 25 100
+wait 10
+tapkey 5 100
+wait 10
+tapkey 12 100
+wait 10
+tapkey 19 100
+wait 10
+tapkey 26 100
+wait 10
+tapkey 6 100
+wait 10
+tapkey 13 100
+wait 10
+tapkey 20 100
+wait 10
+tapkey 0 100
+wait 10
+tapkey 7 100
+wait 10
+tapkey 14 100
+wait 10
+tapkey 21 100
+wait 10
+tapkey 1 100
+wait 10
+tapkey 8 100
+wait 10
+tapkey 15 100
+wait 10
+tapkey 22 100
+wait 10
+tapkey 2 100
+wait 10
+tapkey 9 100
+wait 10
+tapkey 16 100
+wait 10
+tapkey 23 100
+wait 10
+tapkey 3 100
+wait 10
+tapkey 10 100
+wait 10
+tapkey 17 100
+wait 10
+tapkey 24 100
+wait 10
+tapkey 4 100
+wait 10
+tapkey 11 100
+wait 10
+tapkey 18 100
+wait 10
+tapkey 25 100
+wait 10
+tapkey 5 100
+wait 10
+tapkey 12 100
+wait 10
+tapkey 19 100
+wait 10
+tapkey 26 100
+wait 10
+tapkey 6 100
+wait 10
+tapkey 13 100
+wait 10
+tapkey 20 100
+wait 10
+tapkey 0 100
+wait 10
+tapkey 7 100
+wait 10
+tapkey 14 100
+wait 10
+tapkey 21 100
+wait 10
+tapkey 1 100
+wait 10
+tapkey 8 100
+wait 10
+tapkey 15 100
+wait 10
+tapkey 22 100
+wait 10
+tapkey 2 100
+wait 10
+tapkey 9 100
+wait 10
+tapkey 16 100
+wait 10
+tapkey 23 100
+wait 10
+tapkey 3 100
+wait 10
+tapkey 10 100
+wait 10
+tapkey 17 100
+wait 10
+tapkey 24 100
+wait 10
+tapkey 4 100
+wait 10
+tapkey 11 100
+wait 10
+tapkey 18 100
+wait 10
+tapkey 25 100
+wait 10
+tapkey 5 100
+wait 10
+tapkey 12 100
+wait 10
+tapkey 19 100
+wait 10
+tapkey 26 100
+wait 10
+tapkey 6 100
+wait 10
+tapkey 13 100
+wait 10
+tapkey 20 100
+wait 10
+tapkey 0 100
+wait 10
+tapkey 7 100
+wait 10
+tapkey 14 100
+wait 10
+tapkey 21 100
+wait 10
+tapkey 1 100
+wait 10
+tapkey 8 100
+wait 10
+tapkey 15 100
+wait 10
+tapkey 22 100
+wait 10
+tapkey 2 100
+wait 10
+tapkey 9 100
+wait 10
+tapkey 16 100
+wait 10
+tapkey 23 100
+wait 10
+tapkey 3 100
+wait 10
+tapkey 10 100
+wait 10
+tapkey 17 100
+wait 10
+tapkey 24 100
+wait 10
+tapkey 4 100
+wait 10
+tapkey 11 100
+wait 10
+tapkey 18 100
+wait 10
+tapkey 25 100
+wait 10
+tapkey 5 100
+wait 10
+tapkey 12 100
+wait 10
+tapkey 19 100
+wait 10
+tapkey 26 100
+wait 10
+tapkey 6 100
+wait 10
+tapkey 13 100
+wait 10
+tapkey 20 100
+wait 10
+tapkey 0 100
+wait 10
+tapkey 7 100
+wait 10
+tapkey 14 100
+wait 10
+tapkey 21 100
+wait 10
+expect voices <13
+tap ENV
+wait 200
+tapkey 3 100
+wait 10
+tapkey 10 100
+wait 10
+tapkey 17 100
+wait 10
+tapkey 24 100
+wait 10
+tapkey 4 100
+wait 10
+tapkey 11 100
+wait 10
+tapkey 18 100
+wait 10
+tapkey 25 100
+wait 10
+tapkey 5 100
+wait 10
+tapkey 12 100
+wait 10
+tapkey 19 100
+wait 10
+tapkey 26 100
+wait 10
+tapkey 6 100
+wait 10
+tapkey 13 100
+wait 10
+tapkey 20 100
+wait 10
+tapkey 0 100
+wait 10
+tapkey 7 100
+wait 10
+tapkey 14 100
+wait 10
+tapkey 21 100
+wait 10
+tapkey 1 100
+wait 10
+tapkey 8 100
+wait 10
+tapkey 15 100
+wait 10
+tapkey 22 100
+wait 10
+tapkey 2 100
+wait 10
+tapkey 9 100
+wait 10
+tapkey 16 100
+wait 10
+tapkey 23 100
+wait 10
+tapkey 3 100
+wait 10
+tapkey 10 100
+wait 10
+tapkey 17 100
+wait 10
+tapkey 24 100
+wait 10
+tapkey 4 100
+wait 10
+tapkey 11 100
+wait 10
+tapkey 18 100
+wait 10
+tapkey 25 100
+wait 10
+tapkey 5 100
+wait 10
+tapkey 12 100
+wait 10
+tapkey 19 100
+wait 10
+tapkey 26 100
+wait 10
+tapkey 6 100
+wait 10
+tapkey 13 100
+wait 10
+tapkey 20 100
+wait 10
+tapkey 0 100
+wait 10
+tapkey 7 100
+wait 10
+tapkey 14 100
+wait 10
+tapkey 21 100
+wait 10
+tapkey 1 100
+wait 10
+tapkey 8 100
+wait 10
+tapkey 15 100
+wait 10
+tapkey 22 100
+wait 10
+tapkey 2 100
+wait 10
+tapkey 9 100
+wait 10
+tapkey 16 100
+wait 10
+tapkey 23 100
+wait 10
+tapkey 3 100
+wait 10
+tapkey 10 100
+wait 10
+tapkey 17 100
+wait 10
+tapkey 24 100
+wait 10
+tapkey 4 100
+wait 10
+tapkey 11 100
+wait 10
+tapkey 18 100
+wait 10
+tapkey 25 100
+wait 10
+tapkey 5 100
+wait 10
+tapkey 12 100
+wait 10
+tapkey 19 100
+wait 10
+tapkey 26 100
+wait 10
+tapkey 6 100
+wait 10
+tapkey 13 100
+wait 10
+tapkey 20 100
+wait 10
+tapkey 0 100
+wait 10
+tapkey 7 100
+wait 10
+tapkey 14 100
+wait 10
+tapkey 21 100
+wait 10
+tapkey 1 100
+wait 10
+tapkey 8 100
+wait 10
+tapkey 15 100
+wait 10
+tapkey 22 100
+wait 10
+tapkey 2 100
+wait 10
+tapkey 9 100
+wait 10
+tapkey 16 100
+wait 10
+tapkey 23 100
+wait 10
+tapkey 3 100
+wait 10
+tapkey 10 100
+wait 10
+tapkey 17 100
+wait 10
+tapkey 24 100
+wait 10
+tapkey 4 100
+wait 10
+tapkey 11 100
+wait 10
+tapkey 18 100
+wait 10
+tapkey 25 100
+wait 10
+tapkey 5 100
+wait 10
+tapkey 12 100
+wait 10
+tapkey 19 100
+wait 10
+tapkey 26 100
+wait 10
+tapkey 6 100
+wait 10
+tapkey 13 100
+wait 10
+tapkey 20 100
+wait 10
+tapkey 0 100
+wait 10
+tapkey 7 100
+wait 10
+tapkey 14 100
+wait 10
+tapkey 21 100
+wait 10
+expect voices <13
+tap GLO
+wait 200
+tapkey 3 100
+wait 10
+tapkey 10 100
+wait 10
+tapkey 17 100
+wait 10
+tapkey 24 100
+wait 10
+tapkey 4 100
+wait 10
+tapkey 11 100
+wait 10
+tapkey 18 100
+wait 10
+tapkey 25 100
+wait 10
+tapkey 5 100
+wait 10
+tapkey 12 100
+wait 10
+tapkey 19 100
+wait 10
+tapkey 26 100
+wait 10
+tapkey 6 100
+wait 10
+tapkey 13 100
+wait 10
+tapkey 20 100
+wait 10
+tapkey 0 100
+wait 10
+tapkey 7 100
+wait 10
+tapkey 14 100
+wait 10
+tapkey 21 100
+wait 10
+tapkey 1 100
+wait 10
+tapkey 8 100
+wait 10
+tapkey 15 100
+wait 10
+tapkey 22 100
+wait 10
+tapkey 2 100
+wait 10
+tapkey 9 100
+wait 10
+tapkey 16 100
+wait 10
+tapkey 23 100
+wait 10
+tapkey 3 100
+wait 10
+tapkey 10 100
+wait 10
+tapkey 17 100
+wait 10
+tapkey 24 100
+wait 10
+tapkey 4 100
+wait 10
+tapkey 11 100
+wait 10
+tapkey 18 100
+wait 10
+tapkey 25 100
+wait 10
+tapkey 5 100
+wait 10
+tapkey 12 100
+wait 10
+tapkey 19 100
+wait 10
+tapkey 26 100
+wait 10
+tapkey 6 100
+wait 10
+tapkey 13 100
+wait 10
+tapkey 20 100
+wait 10
+tapkey 0 100
+wait 10
+tapkey 7 100
+wait 10
+tapkey 14 100
+wait 10
+tapkey 21 100
+wait 10
+tapkey 1 100
+wait 10
+tapkey 8 100
+wait 10
+tapkey 15 100
+wait 10
+tapkey 22 100
+wait 10
+tapkey 2 100
+wait 10
+tapkey 9 100
+wait 10
+tapkey 16 100
+wait 10
+tapkey 23 100
+wait 10
+tapkey 3 100
+wait 10
+tapkey 10 100
+wait 10
+tapkey 17 100
+wait 10
+tapkey 24 100
+wait 10
+tapkey 4 100
+wait 10
+tapkey 11 100
+wait 10
+tapkey 18 100
+wait 10
+tapkey 25 100
+wait 10
+tapkey 5 100
+wait 10
+tapkey 12 100
+wait 10
+tapkey 19 100
+wait 10
+tapkey 26 100
+wait 10
+tapkey 6 100
+wait 10
+tapkey 13 100
+wait 10
+tapkey 20 100
+wait 10
+tapkey 0 100
+wait 10
+tapkey 7 100
+wait 10
+tapkey 14 100
+wait 10
+tapkey 21 100
+wait 10
+tapkey 1 100
+wait 10
+tapkey 8 100
+wait 10
+tapkey 15 100
+wait 10
+tapkey 22 100
+wait 10
+tapkey 2 100
+wait 10
+tapkey 9 100
+wait 10
+tapkey 16 100
+wait 10
+tapkey 23 100
+wait 10
+tapkey 3 100
+wait 10
+tapkey 10 100
+wait 10
+tapkey 17 100
+wait 10
+tapkey 24 100
+wait 10
+tapkey 4 100
+wait 10
+tapkey 11 100
+wait 10
+tapkey 18 100
+wait 10
+tapkey 25 100
+wait 10
+tapkey 5 100
+wait 10
+tapkey 12 100
+wait 10
+tapkey 19 100
+wait 10
+tapkey 26 100
+wait 10
+tapkey 6 100
+wait 10
+tapkey 13 100
+wait 10
+tapkey 20 100
+wait 10
+tapkey 0 100
+wait 10
+tapkey 7 100
+wait 10
+tapkey 14 100
+wait 10
+tapkey 21 100
+wait 10
+expect voices <13
+tap ARP
+wait 200
+tapkey 3 100
+wait 10
+tapkey 10 100
+wait 10
+tapkey 17 100
+wait 10
+tapkey 24 100
+wait 10
+tapkey 4 100
+wait 10
+tapkey 11 100
+wait 10
+tapkey 18 100
+wait 10
+tapkey 25 100
+wait 10
+tapkey 5 100
+wait 10
+tapkey 12 100
+wait 10
+tapkey 19 100
+wait 10
+tapkey 26 100
+wait 10
+tapkey 6 100
+wait 10
+tapkey 13 100
+wait 10
+tapkey 20 100
+wait 10
+tapkey 0 100
+wait 10
+tapkey 7 100
+wait 10
+tapkey 14 100
+wait 10
+tapkey 21 100
+wait 10
+tapkey 1 100
+wait 10
+tapkey 8 100
+wait 10
+tapkey 15 100
+wait 10
+tapkey 22 100
+wait 10
+tapkey 2 100
+wait 10
+tapkey 9 100
+wait 10
+tapkey 16 100
+wait 10
+tapkey 23 100
+wait 10
+tapkey 3 100
+wait 10
+tapkey 10 100
+wait 10
+tapkey 17 100
+wait 10
+tapkey 24 100
+wait 10
+tapkey 4 100
+wait 10
+tapkey 11 100
+wait 10
+tapkey 18 100
+wait 10
+tapkey 25 100
+wait 10
+tapkey 5 100
+wait 10
+tapkey 12 100
+wait 10
+tapkey 19 100
+wait 10
+tapkey 26 100
+wait 10
+tapkey 6 100
+wait 10
+tapkey 13 100
+wait 10
+tapkey 20 100
+wait 10
+tapkey 0 100
+wait 10
+tapkey 7 100
+wait 10
+tapkey 14 100
+wait 10
+tapkey 21 100
+wait 10
+tapkey 1 100
+wait 10
+tapkey 8 100
+wait 10
+tapkey 15 100
+wait 10
+tapkey 22 100
+wait 10
+tapkey 2 100
+wait 10
+tapkey 9 100
+wait 10
+tapkey 16 100
+wait 10
+tapkey 23 100
+wait 10
+tapkey 3 100
+wait 10
+tapkey 10 100
+wait 10
+tapkey 17 100
+wait 10
+tapkey 24 100
+wait 10
+tapkey 4 100
+wait 10
+tapkey 11 100
+wait 10
+tapkey 18 100
+wait 10
+tapkey 25 100
+wait 10
+tapkey 5 100
+wait 10
+tapkey 12 100
+wait 10
+tapkey 19 100
+wait 10
+tapkey 26 100
+wait 10
+tapkey 6 100
+wait 10
+tapkey 13 100
+wait 10
+tapkey 20 100
+wait 10
+tapkey 0 100
+wait 10
+tapkey 7 100
+wait 10
+tapkey 14 100
+wait 10
+tapkey 21 100
+wait 10
+tapkey 1 100
+wait 10
+tapkey 8 100
+wait 10
+tapkey 15 100
+wait 10
+tapkey 22 100
+wait 10
+tapkey 2 100
+wait 10
+tapkey 9 100
+wait 10
+tapkey 16 100
+wait 10
+tapkey 23 100
+wait 10
+tapkey 3 100
+wait 10
+tapkey 10 100
+wait 10
+tapkey 17 100
+wait 10
+tapkey 24 100
+wait 10
+tapkey 4 100
+wait 10
+tapkey 11 100
+wait 10
+tapkey 18 100
+wait 10
+tapkey 25 100
+wait 10
+tapkey 5 100
+wait 10
+tapkey 12 100
+wait 10
+tapkey 19 100
+wait 10
+tapkey 26 100
+wait 10
+tapkey 6 100
+wait 10
+tapkey 13 100
+wait 10
+tapkey 20 100
+wait 10
+tapkey 0 100
+wait 10
+tapkey 7 100
+wait 10
+tapkey 14 100
+wait 10
+tapkey 21 100
+wait 10
+expect voices <13
+tap SEQ
+wait 200
+tapkey 3 100
+wait 10
+tapkey 10 100
+wait 10
+tapkey 17 100
+wait 10
+tapkey 24 100
+wait 10
+tapkey 4 100
+wait 10
+tapkey 11 100
+wait 10
+tapkey 18 100
+wait 10
+tapkey 25 100
+wait 10
+tapkey 5 100
+wait 10
+tapkey 12 100
+wait 10
+tapkey 19 100
+wait 10
+tapkey 26 100
+wait 10
+tapkey 6 100
+wait 10
+tapkey 13 100
+wait 10
+tapkey 20 100
+wait 10
+tapkey 0 100
+wait 10
+tapkey 7 100
+wait 10
+tapkey 14 100
+wait 10
+tapkey 21 100
+wait 10
+tapkey 1 100
+wait 10
+tapkey 8 100
+wait 10
+tapkey 15 100
+wait 10
+tapkey 22 100
+wait 10
+tapkey 2 100
+wait 10
+tapkey 9 100
+wait 10
+tapkey 16 100
+wait 10
+tapkey 23 100
+wait 10
+tapkey 3 100
+wait 10
+tapkey 10 100
+wait 10
+tapkey 17 100
+wait 10
+tapkey 24 100
+wait 10
+tapkey 4 100
+wait 10
+tapkey 11 100
+wait 10
+tapkey 18 100
+wait 10
+tapkey 25 100
+wait 10
+tapkey 5 100
+wait 10
+tapkey 12 100
+wait 10
+tapkey 19 100
+wait 10
+tapkey 26 100
+wait 10
+tapkey 6 100
+wait 10
+tapkey 13 100
+wait 10
+tapkey 20 100
+wait 10
+tapkey 0 100
+wait 10
+tapkey 7 100
+wait 10
+tapkey 14 100
+wait 10
+tapkey 21 100
+wait 10
+tapkey 1 100
+wait 10
+tapkey 8 100
+wait 10
+tapkey 15 100
+wait 10
+tapkey 22 100
+wait 10
+tapkey 2 100
+wait 10
+tapkey 9 100
+wait 10
+tapkey 16 100
+wait 10
+tapkey 23 100
+wait 10
+tapkey 3 100
+wait 10
+tapkey 10 100
+wait 10
+tapkey 17 100
+wait 10
+tapkey 24 100
+wait 10
+tapkey 4 100
+wait 10
+tapkey 11 100
+wait 10
+tapkey 18 100
+wait 10
+tapkey 25 100
+wait 10
+tapkey 5 100
+wait 10
+tapkey 12 100
+wait 10
+tapkey 19 100
+wait 10
+tapkey 26 100
+wait 10
+tapkey 6 100
+wait 10
+tapkey 13 100
+wait 10
+tapkey 20 100
+wait 10
+tapkey 0 100
+wait 10
+tapkey 7 100
+wait 10
+tapkey 14 100
+wait 10
+tapkey 21 100
+wait 10
+tapkey 1 100
+wait 10
+tapkey 8 100
+wait 10
+tapkey 15 100
+wait 10
+tapkey 22 100
+wait 10
+tapkey 2 100
+wait 10
+tapkey 9 100
+wait 10
+tapkey 16 100
+wait 10
+tapkey 23 100
+wait 10
+tapkey 3 100
+wait 10
+tapkey 10 100
+wait 10
+tapkey 17 100
+wait 10
+tapkey 24 100
+wait 10
+tapkey 4 100
+wait 10
+tapkey 11 100
+wait 10
+tapkey 18 100
+wait 10
+tapkey 25 100
+wait 10
+tapkey 5 100
+wait 10
+tapkey 12 100
+wait 10
+tapkey 19 100
+wait 10
+tapkey 26 100
+wait 10
+tapkey 6 100
+wait 10
+tapkey 13 100
+wait 10
+tapkey 20 100
+wait 10
+tapkey 0 100
+wait 10
+tapkey 7 100
+wait 10
+tapkey 14 100
+wait 10
+tapkey 21 100
+wait 10
+expect voices <13

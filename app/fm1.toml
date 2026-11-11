@@ -1,0 +1,19 @@
+# Spooky Stable's build settings (base/tools/build.py)
+name = "SPOOKY"                # names the build's files: app/build/spooky.fwsc, spooky-X.Y.fwsc
+id_prefix = "FM-1_57"          # package identity: dev FM-1_5700, releases FM-1_57XXYYZZ (change if it clashes)
+usb_manufacturer = "Spooky Stable"
+usb_product = "SPOOKY STABLE FM-1"
+o2 = []
+words = "words.tsv"
+ble = false                    # no radio: a toddler's toy needs none, and the build needs none of JieLi's BT libraries
+# the site (base/tools/make_site.py)
+tagline = "eight silly unicorn toys for little hands"
+repo = "https://github.com/YOUR-NAME/spooky-stable"          # <- yours
+licence = "MPL-2.0"
+credits = "Built on fm1-base and felucca-bsp."
+# firmware.json, for firmware hubs (base/docs/FIRMWARE-JSON.md)
+author = "YOUR NAME"                                         # <- yours
+description = "A no-menu, no-text toy for a three-year-old. Eight buttons pick a toy starring a rainbow unicorn: fart, poop, pee, burp, sneeze, a drum jam, a toilet flush and a booger flick. Every key makes it act at once with cartoon squash and stretch, shake and particles; every note snaps to the mood's scale, and one knob changes the whole world's colours and music."
+tags = ["game", "fm"]
+install = "https://YOUR-NAME.github.io/spooky-stable/install/"   # <- yours
+screenshot = "app/docs/img/fart.png"
