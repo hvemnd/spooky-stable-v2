@@ -63,11 +63,11 @@ jobs:
         mkdir -p build/release-assets
         if [[ "$GITHUB_REF" == refs/tags/* ]]; then
           version=${GITHUB_REF_NAME#v}
-          ./build.sh --release "$version"
+          sh ./build.sh --release "$version"
           cp "app/build/$pkg-$version.fwsc" build/release-assets/
           cp "app/build/$pkg.bin" "build/release-assets/$pkg-$version-app.bin"
         else
-          ./build.sh
+          sh ./build.sh
           cp "app/build/$pkg.fwsc" build/release-assets/
           cp "app/build/$pkg.bin" "build/release-assets/$pkg-app.bin"
         fi
