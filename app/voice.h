@@ -7,8 +7,8 @@
 #pragma once
 
 #define NVOICE 12
-#define VOL_CAP 0.70f                 /* safety: never more than 70 % of full scale */
-#define QUIET_CAP 0.20f               /* quiet mode */
+#define VOL_CAP 0.35f                 /* safety: never more than 70 % of full scale */
+#define QUIET_CAP 0.15f               /* quiet mode */
 
 #define NF_HOLD 1u                    /* held until snd_off (with any patch) */
 #define NF_ONESHOT 2u                 /* never held, even with a PA_HOLD patch (an audition, snd_play) */
